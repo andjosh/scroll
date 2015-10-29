@@ -4,8 +4,42 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Scroll</title>
+        <style>
+            ::-webkit-scrollbar { 
+                display: none; 
+            }
+            body {
+                background-image: linear-gradient( lightgrey, white 1px);
+                background-size: 1cm 1cm;
+                background-position-y: -4px;
+                margin: 0;
+                padding: 0;
+                font-size: 0.5cm;
+                line-height: 0.5cm;
+            }
+            ul {
+                margin: 0;
+                padding: 0 1cm;
+            }
+            li {
+                position: absolute;
+            }
+            h1 {
+                position: fixed;
+                font-size: 1em;
+                right: 1em;
+                top: 1em;
+            }
+            em {
+                position: fixed;
+                right: 1em;
+                top: 3em;
+            }
+        </style>
     </head>
     <body>
+        <h1>Scroll the Distance</h1>
+        <em>by <a href="//josh.dog">Josh</a></em>
         <ul></ul>
         <script src="data.js"></script>
 <script>
@@ -14,7 +48,10 @@ var length = data.length,
 
 for (var i = 0; i < length; i++) {
     li = document.createElement('li');
-    li.style.paddingTop = i + 'cm';
+    li.style.paddingTop = (data[i].dist - 0.25) + 'cm';
+    li.title = (data[i].dist - 0.25) + 'cm';
+    li.style.zIndex = i * -1;
+    li.innerHTML = data[i].html;
     ul.appendChild(li);
 }
 </script>
