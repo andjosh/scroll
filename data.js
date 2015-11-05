@@ -3,4 +3,5 @@ window.data = [
     ,{html: 'of a carpenter ant body.', dist: 2.5}
     ,{html: 'of the average human optic nerve.', dist: 5}
     ,{html: 'of the longest human tongue.', dist: 9.8044}
+    ,{html: 'of a piano key.', dist: 14.92}
 ];
